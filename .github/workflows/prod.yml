@@ -1,16 +1,11 @@
-name: Run Tests, Build Dockerfile, Run on Heroku
+name: Production Workflow
 
 on:
   push:
     branches:
       - 'master'
-      - 'main'
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - 'master'
-      - 'main'
 
 jobs:
   runtest:
@@ -26,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Test with pytest
-        run: pytest --pylint -vv
+        run: pytest -vv
 
   build-container:
     runs-on: ubuntu-latest
@@ -60,6 +55,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "chia-lin-heroku-dev" #Must be unique in Heroku
+          heroku_app_name: "chia-lin-heroku-prod" #Must be unique in Heroku
           heroku_email: "ch35@njit.edu"
           usedocker: true
