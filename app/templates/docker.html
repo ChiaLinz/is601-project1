@@ -116,7 +116,7 @@
 
             .outline {
                 border: 5px solid black;
-                height: 250px;
+                height: 150px;
                 margin: 10px;
                 background: whitesmoke;
             }
@@ -206,9 +206,6 @@
             <a href="#intro" class="link-primary">Intro</a><br>
             <a href="#workflow" class="link-primary">Docker-Workflow</a><br>
             <a href="#udc" class="link-pri  mary">Useful Docker Command</a><br>
-            <a href="#tags" class="link-primary">Tags</a><br>
-            <a href="#cf" class="link-primary">Clone&Fork</a><br>
-            <a href="#pppr" class="link-primary">Push&Pull&Pull-Request</a>
         </h2></div>
 
 
@@ -291,7 +288,7 @@
 
         <div id="udc" class="header" align="center"><h1>Useful Docker Command</h1></div>
         <br>
-        <div class="left"><h2 align="center"></h2><h4>
+        <div class="left3"><h2 align="center"></h2><h4>
                     <b>docker –version</b><br>
                     get the currently installed version of docker<hr>
                     <b>docker pull [image name]</b><br>
@@ -306,143 +303,25 @@
 
 
 
-        <div class="right"><h3>&emsp; &emsp; Master and Branch are called the main version and branch version of the
-            project. On GitHub,
-            the first project version created is usually called the Master version. But for Git, there is no difference
-            between the master and the branch in the version of the development project. Each branch is an equivalent
-            relationship, and the developer adjusts the version name to distinguish it. It is generally customary to
-            call
-            the stable version the trunk, and the rest of the changes and developing versions are called branches.
-            Branch is
-            also a Git instruction for establishing a branch, which can copy a historical version and independently
-            become
-            another new branch version, while the Merge instruction is just the opposite, which is to merge two
-            different
-            branch versions into it. on a branch.<br><br>
-
+        <div class="right3"><h3>&emsp; &emsp;To start the docker, you could follow the steps to setup.
             &emsp; &emsp;<br><br>
+            &emsp; &emsp; First: build the image {<b>docker build -t [image name] .</b>}
             &emsp; &emsp;<br><br>
-            &emsp; &emsp; Most developers develop on the trunk, but each version has different purposes and functions.
-            If
-            the version is only built on the one-stop trunk, it is still difficult for the team to track the software.
-            development process.<br><br>
-            &emsp; &emsp;Git provides a visual version line graph (commit graph) to present the tree structure formed by
-            the
-            connection between the trunk and each branch. However, as the project gets larger, the version line graph
-            becomes more and more complex. The user can make good use of merge instructions to unify unnecessary
-            branches
-            and organize the version line diagram clearly.</h3></div>
+             &emsp; &emsp;Second: create repository in dockerhub ( it is better to name the repo same to the image you build)
+            &emsp; &emsp; <br><br>
+            &emsp; &emsp;Third: run the docker command { <b>docker push [user_name]/[image_name]:tagname</b>}
+            &emsp; &emsp;</h3></div>
 
-        <div id="tags" class="header" align="center"><h1>Tags</h1></div>
-        <br>
+        <div><img src="../static/images/docker_1.png" alt="Docker Create Repo" align="center" width="1100" height="300">
 
-               <div class="left3"><h2 align="center">TAGS</h2>
-        <h3>&emsp;Capture a point in history that is used for a marked version release (i.e. v1.0.1)<hr>
-                     </h3><h4>
-                    <b>git tag [tagname]</b><br>
-                   Creating a tag<hr>
-                    <b>git tag v1.4-lw</b><br>
-                    Lightweight Tags<hr>
-                    <b>git tag -a v1.4</b><br>
-                    Annotated tags are stored as full objects in the Git database<hr><hr></div>
+            <div><img src="../static/images/docker_2.png" alt="Docker Create Repo" align="center" width="1100" height="769"></div>
 
 
-        <div class="right3"><h3>&emsp; &emsp; Git can tag versions at a point in time. This is often done when doing a
-            version release.
-            There are two types of tags used by Git: lightweight and annotated.<br><br>
-
-            &emsp; &emsp; Lightweight tags: Like a branch that doesn't change, it's actually a reference to a specific
-            commit object.
-
-            <br>
-            &emsp; &emsp; Annotated tags: It is actually a separate object stored in the repository, it has its own
-            checksum
-            information, contains the label's name, email address and date, and the label description, the label itself
-            also
-            allows the use of GNU Privacy Guard ( GPG) to sign or verify.
-            <br><br>
-
-            &emsp; &emsp;To sum up, the lightweight tag is a reference, and the annotation tag is a separate object.
-            Annotation tags are generally recommended to retain relevant details.
-        </h3></div>
-
-
-        <div id="cf" class="header" align="center"><h1>Clone and Fork</h1></div>
-        <br>
-        <div class="left3"><h2 align="center">SETUP & INIT</h2>
-        <h3>&emsp;Configuring user information, initializing and cloning repositories<hr>
-                     </h3><h4>
-                    <b>git init</b><br>
-                   initialize an existing directory as a Git repository<hr>
-                    <b>git clone [url]</b><br>
-                    retrieve an entire repository from a hosted location via URL
-                  <hr></div>
-
-
-        <div class="right3"><h3>&emsp; &emsp;The Clone command is to copy all the content of the project in the remote
-            repository to the
-            local, to create a local repository and working directory, while the Fork is to copy the content of the
-            remote
-            repository of other people's projects. <br><br>
-
-            &emsp; &emsp;If the developer sees an interesting project on GitHub, he can execute the Fork command to copy
-            the
-            remote repository of other projects to his own remote repository, and then execute the Clone command to copy
-            the
-            entire project of his own remote repository. , including versions, to the local repository. <br><br></h3>
-            <div class="goTop" align="right">
-                <a href="#" class="goTopBtn jq-goTop">
-                    <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
-                </a>
-            </div>
-        </div>
-
-        <div id="pppr" class="header" align="center"><h1>Push, Pull, and Pull Request</h1></div>
-        <br>
-        <div class="left"><h2 align="center">SHARE & UPDATE</h2>
-        <h3>&emsp;Retrieving updates from another repository and updating local repos<hr>
-                     </h3><h4>
-                    <b>git remote add [alias] [url</b><br>
-                   add a git URL as an alias<hr>
-                    <b>git fetch [alias]</b><br>
-                    fetch down all the branches from that Git remote<hr>
-                    <b>git merge [alias]/[branch]</b><br>
-                   merge a remote branch into your current branch to bring it up to date<hr>
-                 <b>git push [alias] [branch]</b><br>
-                   Transmit local branch commits to the remote repository branch<hr>
-                 <b>git pull</b><br>
-                   fetch and merge any commits from the tracking remote branch<hr></div>
-
-
-
-        <div class="right">
-            <h3>&emsp; &emsp; Execute the push (Push) command, you can upload the relevant files of your
-                current local
-                repository to the remote repository, while the pull (Pull) command downloads the latest version of the
-                remote
-                repository to your local side. And merge the remote branch into the local branch. However, Pull does not
-                download the content of each version of the complete project like the Clone command.<br><br>
-
-                &emsp; &emsp;Developers can execute Pull to obtain the code on the remote repository authorized by
-                others,
-                or
-                push the code modified by themselves to the accessible third-party remote repository. Through the push
-                (Push)
-                and pull (Pull) two commands, developers can share the source code with each other. <br><br>
-
-                &emsp; &emsp;Pull Request, on the other hand, is more proactive in requiring third-party developers to
-                include
-                their own programs, and integrate the code on the local repository into the other side's repository. For
-                example, member A can request member B through a Pull Request to incorporate the code modified by member
-                A
-                into
-                member B's development project.
                 <div class="goTop" align="right">
                     <a href="#" class="goTopBtn jq-goTop">
                         <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
                     </a>
                 </div>
-            </h3>
         </div>
 
         <!-- Optional JavaScript; choose one of the two! -->
