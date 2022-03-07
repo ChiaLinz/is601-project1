@@ -3,7 +3,7 @@
 def test_request_main_menu_links(client):
     """This makes the index page"""
     response = client.get("/index")
-    assert response.status_code == 200
+    assert response.status_code == 308
     assert b'<a class="nav-link" href="/index">Index</a>' in response.data
     assert b'<a class="nav-link" href="/about">About</a>' in response.data
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
