@@ -1,262 +1,226 @@
-<!doctype html>
-<html lang="en">
+<html lang="en"> <!--language-->
+<!--head and body就像是兩個branch-->
+<!--把整個head選起來tab可以讓整個往前 shift+tab可以退回-->
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    {% block head %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
-
-        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
-    {% endblock %}
-
-</head>
-<body>
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap"/>
-            </svg>
-            <span class="fs-4">My first Bootstrap Site</span>
-        </a>
-        <!DOCTYPE html>
-        <html>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body {
-                margin: 0;
-            }
-
-            .icon-bar {
+    <meta charset="UTF-8">
+    <title>Internet History</title> <!--網頁的標題 也是網頁在外呈現的方式-->
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <link rel = "icon" href = "images/icon.png" type = "image/x-icon"/>
+    <style>
+        #wrapper {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #top{
+            width: 960px;
+            height: 75px;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            border-top: 10px solid white;
+            border-bottom: 10px solid white;
+        }
+        #topblank{
+            width: 960px;
+            height: 90px;
+            float: left;
+        }
+        #logo{
+            width: 170px;
+            height: 75px;
+            float: left;
+            background-color: #a9dcd8;
+            margin: 0;
+            text-align: right;
+        }
+        #logopic{
+            float: left;
+        }
+        #footer{
+            text-align: center;
+        }
+        .clearFix{
+            clear: both;
+        }
+        #Links_frame{
+            width: 750px;
+            height: 75px;
+            float: right;
+            background-color: #a9dcd8;
+            margin: 0;
+            text-align: right;
+        }
+        #Links{
+            margin-top: 32px;
+            margin-right: 1px;
+        }
+        .Main_picture{
+            width: 940px;
+            height: 400px;
+            float: left;
+            border: 10px solid white;
+            background-image: url("../static/images/about_bg.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            /*opacity: 0.75;*/
+        }
+        .PIC{
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .internet_pic_frame{
+            width: 360px;
+            height: 240px;
+            float: left;
+            background-color: #224239;
+            border: 5px solid white;
+        }
+        #internet_pic{
+            max-width: 360px;
+            max-height: 240px;
+            float: left;
+        }
+        .internet_info{
+            width: 580px;
+            height: 240px;
+            float: left;
+            border: 5px solid white;
+            background-color: #c6e7e4;
+        }
+        #getstarted{
+            font-size: 28px;
+            color: #224239;
+            margin-left: 25px;
+            margin-top: 60px;
+            font-family: monospace;
+        }
+        .Blank{
+            width: 960px;
+            height: 20px;
+            float: left;
+        }
+        /*------------------------BUTTON---------------------------*/
+                    .icon-bar {
                 width: 100%;
-                background-color: #555;
+                background-color: #485F6E;
                 overflow: auto;
             }
 
             .icon-bar a {
                 float: left;
-                width: 20%;
+                width: 16.5%;
                 text-align: center;
                 padding: 15px 0;
-                transition: all 0.3s ease;
+                transition: all 0.5s ease;
                 color: white;
                 font-size: 36px;
             }
 
             .icon-bar a:hover {
-                background-color: #000;
+                background-color: #17719900;
             }
 
             .active {
                 background-color: #04AA6D;
             }
-        </style>
-        <body>
+    </style>
+ <body>
+
 
         <div class="icon-bar">
-            <a class="active" href="/index"><i class="fa fa-home"></i></a>
-            <a href="#"><i class="fa fa-search"></i></a>
-            <a class="z active" href="/about"><i class="fa fa-envelope"></i></a>
-            <a href="#"><i class="fa fa-globe"></i></a>
-            <a href="#"><i class="fa fa-trash"></i></a>
+            <a href="/index"><i class="fa fa-home"></i></a>
+            <a class="active" href="#"><i class="fab fa-github"></i></a>
+            <a href="/docker"><i class="fab fa-docker"></i></a>
+            <a href="/python"><i class="fab fa-python" title="Edit"></i></a>
+            <a href="#"><i class="fas fa-sitemap" "></i></a>
+            <a href="/about"><i class="fas fa-user-circle"></i></a>
         </div>
 
         </body>
-        </html>
-
-    </header>
-
-    <h1> Chia-Lin's About Page</h1>
-
-
-<html>
-  <head>
-    <meta charset="utf-8" >
-    <title>網頁範例-左字右圖</title>
-    <style>
-        .happy{
-          width: 800px;
-          margin: 50px auto;
-          border:solid 1px gray;
-          overflow: hidden; /* 避免長方框下面顯示不正常 */
-        }
-        .bdcard{
-          width: 300px;
-          float:right; /* 圖片在右邊 */
-          padding: 20px;
-        }
-        .bdcard img{
-          display: block;
-          width:100%;
-        }
-        .bdtext{
-          float: left;  /* 文字在左邊 */
-          width: 430px;
-          padding: 20px 20px 0px 0px;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="happy">
-      <div class="bdcard">
-        <img src="../static/images/cinqueterre.png" alt="z" />
-      </div>
-      <div class="bdtext">
-        <h1>About</h1>
-        <p>
-            <span class="red makeBigger CenterGothic">Lorem</span> ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque
-            habitant morbi tristique senectus et. Gravida in fermentum et sollicitudin ac orci phasellus. Egestas congue
-            quisque egestas diam. In massa tempor nec feugiat. Nulla facilisi morbi tempus iaculis. Id interdum velit
-            laoreet id donec. Lobortis scelerisque fermentum dui faucibus. Euismod nisi porta lorem mollis aliquam. Sed
-            sed
-            risus pretium quam. Blandit libero volutpat sed cras ornare. Non curabitur gravida arcu ac tortor dignissim
-            convallis aenean et. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Egestas erat
-            imperdiet
-            sed euismod nisi. Non sodales neque sodales ut etiam sit. A diam sollicitudin tempor id eu nisl nunc. Tellus
-            integer feugiat scelerisque varius morbi enim nunc. Habitant morbi tristique senectus et netus et.
-        </p>
-        <p>
-            Egestas erat imperdiet sed euismod nisi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit
-            amet.
-            Habitant morbi tristique senectus et netus et malesuada fames ac. Vitae tempus quam pellentesque nec nam
-            aliquam
-            sem et tortor. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Aliquet nibh praesent
-            tristique magna sit amet purus gravida quis. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam
-            etiam. Aliquam sem fringilla ut morbi tincidunt augue. Sapien et ligula ullamcorper malesuada proin libero.
-            Rutrum quisque non tellus orci ac auctor augue mauris augue. Euismod in pellentesque massa placerat.
-            Faucibus
-            pulvinar elementum integer enim neque volutpat ac tincidunt. A diam maecenas sed enim ut sem viverra
-            aliquet.
-            Nisl condimentum id venenatis a. Vulputate enim nulla aliquet porttitor lacus luctus accumsan. Mattis
-            aliquam
-            faucibus purus in. Felis donec et odio pellentesque. Egestas maecenas pharetra convallis posuere morbi leo
-            urna.
-            Diam vel quam elementum pulvinar.
-        </p>
-      </div>
+</head>
+<body>
+<div id = "wrapper">
+    <div id = "top">
+        <div id = "logo"> <!--Topic picture-->
+            <a href = "index.html"><img src = "images/IS601.png" alt = "logo" id = "logopic"></a>
+        </div>
+        <menu id = "Links_frame"> <!--Links-->
+            <div id = "Links">
+                <ul class = "drop-down-menu">
+                    <li>
+                        <a href = "index.html">HOMEPAGE</a>
+                    <li/>
+                    <li>
+                        <a href = #>OOP</a>
+                        <ul>
+                            <li><a href = "OOP1.html">CLASS & OBJECT</a></li>
+                            <li><a href = "OOP2.html">MAIN FEATURES</a></li>
+                            <li><a href = "SOLID.html">SOLID OBJECT ORIENTED DESIGN</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href = #>AAA TESTING</a>
+                        <ul>
+                            <li><a href = "AAA TESTING.html">AAA TESTING</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href = #>PYLINT</a>
+                        <ul>
+                            <li><a href = "Pylint.html">PYLINT</a></li>
+                            <li><a href = "Travis%20CI.html">TRAVIS CI</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href = #>INTERNET HISTORY</a>
+                        <ul>
+                            <li><a href = "Page1.html">INTERNET & J.C.R LICKLIDER</a></li>
+                            <li><a href = "Page2.html">LAWRENCE G. ROBERTS & LEONARD KLEINROCK</a></li>
+                            <li><a href = "Page3.html">ROBERT KAHN & VINT CERF</a></li>
+                            <li><a href = "Page4.html">ROBERT METCALFE & DAVE FARBER</a></li>
+                            <li><a href = "Page5.html">RAY TOMLINSON & PAUL MOCKAPETRIS</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href = "AboutUs.html">ABOUT US</a>
+                    <li/>
+                </ul>
+            </div>
+        </menu>
     </div>
-  </body>
+    <div id = "topblank"></div>
+    <div class = "Main_picture"> <!--中間圖片-->
+        <img src = "images/internethistory.jpg" alt = "Internet" class = "PIC">
+    </div>
+    <div class = "internet_pic_frame"> <!--pic-->
+        <img src = "images/internet.png" alt = "internet" id = "internet_pic">
+    </div>
+    <div class = "internet_info"> <!--internet_info-->
+        <div id = "getstarted">
+            <a href = "Page1.html" style = "color: #467064;">GET STARTED IN INTERNET HISTORY!</a>
+            <p></p>
+            <a href = "OOP1.html" style = "color: #467064;">GET STARTED IN OOP!</a>
+        </div>
+    </div>
+    <div class = "Blank"></div> <!--blank-->
+    <div> <!--footer-->
+        <footer id = "footer" class = "clearFix">
+            <a href = "https://github.com/Laucherooo/IS601_project1" target="_blank" style = "color: #467064;">Chia-Jung Chu &#169;</a>
+            <a href = "https://github.com/Tanv08/IS601_project1" target="_blank" style = "color: #467064;">Tanvi Deepak Kapote &#169;</a>
+        </footer>
+    </div>
+</div>
+</body>
 </html>
-
-<html>
-  <head>
-    <meta charset="utf-8" >
-    <title>網頁範例-左字右圖</title>
-    <style>
-        .happy{
-          width: 800px;
-          margin: 50px auto;
-          border:solid 1px gray;
-          overflow: hidden; /* 避免長方框下面顯示不正常 */
-        }
-        .bdcard{
-          width: 300px;
-          float:right; /* 圖片在右邊 */
-          padding: 20px;
-        }
-        .bdcard img{
-          display: block;
-          width:100%;
-        }
-        .bdtext{
-          float: left;  /* 文字在左邊 */
-          width: 430px;
-          padding: 20px 20px 0px 0px;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="happy">
-      <div class="bdcard">
-        <img src="../static/images/cinqueterre.png" alt="z" />
-      </div>
-      <div class="bdtext">
-        <h1>Second</h1>
-        <p>
-
-        Faucibus turpis in eu mi bibendum neque egestas congue quisque. Risus quis varius quam quisque id diam. Eros in
-        cursus turpis massa tincidunt dui ut ornare. Arcu vitae elementum curabitur vitae nunc sed velit dignissim. Nibh
-        sit
-        amet commodo nulla facilisi. Consectetur adipiscing elit pellentesque habitant morbi. Aliquam eleifend mi in
-        nulla.
-        Dui id ornare arcu odio ut. In mollis nunc sed id semper risus in. Ut diam quam nulla porttitor massa id neque
-        aliquam vestibulum. In hendrerit gravida rutrum quisque non tellus orci ac auctor. Faucibus scelerisque eleifend
-        donec pretium vulputate.
-        <p>
-            Sit amet porttitor eget dolor morbi. Magna fermentum iaculis eu non diam phasellus vestibulum lorem sed.
-            Arcu
-            non odio euismod lacinia at quis risus sed. Orci sagittis eu volutpat odio facilisis mauris sit. Aliquet
-            risus
-            feugiat in ante. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Non enim praesent
-            elementum facilisis leo. Egestas congue quisque egestas diam in. Facilisis leo vel fringilla est ullamcorper
-            eget nulla facilisi. Vitae auctor eu augue ut lectus arcu bibendum. Sollicitudin tempor id eu nisl nunc mi.
-            Odio
-            euismod lacinia at quis.
-        </p>
-        <p>
-            Dolor purus non enim praesent elementum facilisis leo. Praesent elementum facilisis leo vel fringilla est
-            ullamcorper. Feugiat nibh sed pulvinar proin gravida hendrerit. Ullamcorper dignissim cras tincidunt
-            lobortis
-            feugiat. Sed pulvinar proin gravida hendrerit. Lacus viverra vitae congue eu. Elementum facilisis leo vel
-            fringilla est ullamcorper eget nulla. Egestas purus viverra accumsan in nisl. In fermentum et sollicitudin
-            ac
-            orci phasellus egestas tellus. Fermentum et sollicitudin ac orci phasellus egestas tellus. Pellentesque id
-            nibh
-            tortor id aliquet lectus proin nibh nisl. Massa tincidunt dui ut ornare. Ut etiam sit amet nisl.
-        </p>
-      </div>
-    </div>
-  </body>
-</html>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Bootstrap Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-
-    <div class="container">
-        <h2>Rounded Corners</h2>
-        <img src="../static/images/cinqueterre.png" class="img-rounded" alt="Cinque Terre" width="304" height="236">
-    </div>
-
-    <div class="container">
-        <img src="../static/images/cinqueterre.png" class="img-roundedz" alt="Cinque Terre" width="304" height="236">
-    </div>
-
-    <div class="container">
-        <img src="../static/images/cinqueterre.png" class="img-roundedz" alt="Cinque Terre" width="304" height="236">
-    </div>
-    </body>
-    </html>

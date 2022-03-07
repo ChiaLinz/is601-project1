@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<title> Docker</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+
+</head>
+
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"/>
+            </svg>
+        </a>
+        <!DOCTYPE html>
+        <html>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Change the herf website to fix the docker, python icon not showing -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+              integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+              crossorigin="anonymous"
+        ">
+
+        <style type="text/css">
+
+        </style>
+
+
+        <style>
+
+            body {
+                margin: 0;
+            }
+
+
+            .icon-bar {
+                width: 100%;
+                background-color: #485F6E;
+                overflow: auto;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 16.5%;
+                text-align: center;
+                padding: 15px 0;
+                transition: all 0.5s ease;
+                color: white;
+                font-size: 36px;
+            }
+
+            .icon-bar a:hover {
+                background-color: #17719900;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+
+            body {
+                line-height: 1;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+
+            blockquote, q {
+                quotes: none;
+            }
+
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .clearfix {
+                clear: both;
+            }
+
+            .wrap {
+                width: 1100x;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .outline {
+                border: 5px solid black;
+                height: 250px;
+                margin: 10px;
+                background: whitesmoke;
+            }
+
+            .header, .footer {
+                border: 10px solid black;
+                width: 1090px;
+                height: 100px;
+                margin: 10px;
+                background: #e7b995;
+                font-size: 32px;
+                padding: 8px;
+                float: left;
+            }
+
+
+            .left, .right, .left2, .right2, .left3, .right3 {
+                float: left;
+                padding: 8px;
+                margin: 10px;
+                background: #97bac5;
+                font-size: 32px;
+            }
+
+            .left {
+                width: 390px;
+                height: 900px;
+            }
+
+            .right {
+                width: 690px;
+                height: 900px;
+            }
+
+            .left2 {
+                width: 400px;
+                height: 1300px;
+            }
+
+            .right2 {
+                width: 700px;
+                height: 1300px
+            }
+
+            .left3 {
+                width: 400px;
+                height: 450px;
+            }
+
+            .right3 {
+                width: 700px;
+                height: 450px
+            }
+
+            .footer {
+                border: 1px solid black;
+                height: 200px;
+                margin: 10px;
+                background: orange;
+            }
+
+
+        </style>
+        <body>
+
+
+        <div class="icon-bar">
+            <a href="/index"><i class="fa fa-home"></i></a>
+            <a  href="/git"><i class="fab fa-github"></i></a>
+            <a class="active" href="#"><i class="fab fa-docker"></i></a>
+            <a href="/python"><i class="fab fa-python"></i></a>
+            <a href="/cico"><i class="fas fa-sitemap" "></i></a>
+            <a href="/about"><i class="fas fa-user-circle"></i></a>
+        </div>
+
+        </body>
+        </html>
+
+
+    </header>
+
+    <div style="float:middle" align="center"><h1>Docker</h1></div>
+    <br><br><br>
+
+    <div>
+        <div class="outline"><h2>
+            <a href="#intro" class="link-primary">Intro</a><br>
+            <a href="#workflow" class="link-primary">Docker-Workflow</a><br>
+            <a href="#udc" class="link-pri  mary">Useful Docker Command</a><br>
+            <a href="#tags" class="link-primary">Tags</a><br>
+            <a href="#cf" class="link-primary">Clone&Fork</a><br>
+            <a href="#pppr" class="link-primary">Push&Pull&Pull-Request</a>
+        </h2></div>
+
+
+        <div class="wrap">
+            <div id="intro" class="header" align="center"><h1> Intro </h1></div>
+
+
+            <div class="left2"><h2 align="center">Download and install Docker</h2>
+                <h3>
+
+                    <hr>
+                    <a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64">Docker for Windows</a><br>
+                    <hr>
+                    <a href="https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64">Dicker for Mac with Intel chip</a><br>
+                    <hr>
+                    <a href="https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64/">Docker for Mac with Apple chip</a>
+                    <hr>
+                    <a href="https://docs.docker.com/engine/install//">Docker for Linux</a>
+                    <hr>
+                </h3>
+            </div>
+
+            <div class="right2">
+
+                <h3>
+                    &emsp;&emsp;The traditional virtual machine we use, it has some limited, such as it requires simulating the entire machine including hardware, each virtual machine needs to have its own operating system, and every virtual machine should choose the same operating system in the same project, otherwise it would not able to link together. Once the virtual machine is started, all the resources pre-allocated to it will be occupied.<br><br>
+                    &emsp;&emsp;However, the docker could run directly on the host kernel and does not need to start a full operating system, the startup speed is on the order of seconds, while virtual machines usually take minutes to start.<br><br>
+                    &emsp;&emsp;Docker utilizes system resources more efficiently because containers do not require the additional overhead of hardware virtualization and running a full operating system.<br><br>
+                    &emsp;&emsp;Docker's architecture can share a single kernel and shared application library, occupying very little memory. In the same hardware environment, the number of images run by Docker is much more than the number of virtual machines, and the utilization of the system is very high.<br><br>
+                    &emsp;&emsp;Developers can use Dockerfile to build images and perform integration tests, while operators can quickly deploy the image directly in the production environment, or even automate deployment.<br><br>
+                    &emsp;&emsp;Migrating applications is easier because Docker ensures consistency of the execution environment. Docker can run on many platforms, whether it is a physical machine, a virtual machine, a public cloud, a private cloud, or even a laptop, and its running results are consistent. Therefore, users can easily migrate an application running on one platform to another platform without worrying about the situation that the application cannot run normally due to changes in the running environment.<br><br>
+                </h3>
+
+            </div>
+            <img src="../static/images/docker_vm.png" alt="Virtual Machine" class="center" width="1100" height="400">
+            <img src="../static/images/docker_d.png" alt="Docker" class="center" width="1100" height="300">
+        </div>
+
+        <div class="wrap">
+            <div id="workflow" class="header" align="center"><h1> Docker Workflow</h1></div>
+            <br>
+
+            <img src="../static/images/docker_workflow.png" alt="Docker Workflow" class="center" width="1100" height="400">
+            <div class="left2"><h2 align="center">SETUP</h2>
+                <h3>
+                &emsp;Configuring user information used across all local repositories<hr>
+                     </h3><h4>
+                    <b>docker run -d -p 80:80 docker/getting-started</b><br>
+                    <b>-d</b> <br>- run the container in detached mode (in the background)<br>
+                    <b>-p 80:80</b><br> - map port 80 of the host to port 80 in the container<br>
+                    <b>docker/getting-started</b><br> - the image to use<hr>
+                    <b>docker build -t getting-started</b><br>
+                    used the Dockerfile to build a new container image<hr>
+                    <b>docker run -dp 3000:3000 getting-started</b><br>
+                    see the website on http://localhost:3000<hr>
+                    <h2 align="center">Remove a container using the CLI</h2>
+                    <h3>&emsp;To remove a container, it first needs to be stopped. Once it has stopped, it can be removed. <hr> </h3><h4>
+                    <b>docker ps</b><br>
+                    Get the ID of the container <hr>
+                    <b>docker stop [the-container-id]</b><br>
+                    stop the container<hr>
+                    <b>docker rm [the-container-id]</b><br>
+                    Once the container has stopped, you can remove it<hr>
+               </h4>
+            </div>
+
+
+            <div class="right2"><h3>&emsp; &emsp; Image: A Docker image is a special file system. In addition to providing the programs, libraries, resources, configuration and other files required for the container to run, it also contains some configuration parameters prepared for the runtime (such as anonymous volumes, environment variables, users, etc.). The image does not contain any dynamic data, and its contents are not changed after construction.<p><br>
+
+
+                        &emsp; &emsp; Container: The relationship between Image and Container is like class and instance in object-oriented programming. Image is a static definition, and container is the entity of image runtime. Containers can be created, started, stopped, deleted, suspended, etc.</p>
+                    <p><br>
+
+                        &emsp; &emsp;Repository: Repository is a Git-like remote repository that centrally stores image files.</p>
+            </h3><a href="#" align="right" class="goTopBtn jq-goTop">
+                <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+            </a></div>
+        </div>
+
+
+        <div id="udc" class="header" align="center"><h1>Useful Docker Command</h1></div>
+        <br>
+        <div class="left"><h2 align="center"></h2><h4>
+                    <b>docker –version</b><br>
+                    get the currently installed version of docker<hr>
+                    <b>docker pull [image name]</b><br>
+                    create a new branch at the current commit<hr>
+                    <b>docker commit [conatainer id] [username/imagename]</b><br>
+                    reates a new image of an edited container on the local system<hr>
+                    <b> docker push [username/image name]</b><br>
+                    push an image to the docker hub repository<hr>
+                    <b>docker build [path to docker file]</b><br>
+                     build an image from a specified docker file<hr></div>
+
+
+
+
+        <div class="right"><h3>&emsp; &emsp; Master and Branch are called the main version and branch version of the
+            project. On GitHub,
+            the first project version created is usually called the Master version. But for Git, there is no difference
+            between the master and the branch in the version of the development project. Each branch is an equivalent
+            relationship, and the developer adjusts the version name to distinguish it. It is generally customary to
+            call
+            the stable version the trunk, and the rest of the changes and developing versions are called branches.
+            Branch is
+            also a Git instruction for establishing a branch, which can copy a historical version and independently
+            become
+            another new branch version, while the Merge instruction is just the opposite, which is to merge two
+            different
+            branch versions into it. on a branch.<br><br>
+
+            &emsp; &emsp;<br><br>
+            &emsp; &emsp;<br><br>
+            &emsp; &emsp; Most developers develop on the trunk, but each version has different purposes and functions.
+            If
+            the version is only built on the one-stop trunk, it is still difficult for the team to track the software.
+            development process.<br><br>
+            &emsp; &emsp;Git provides a visual version line graph (commit graph) to present the tree structure formed by
+            the
+            connection between the trunk and each branch. However, as the project gets larger, the version line graph
+            becomes more and more complex. The user can make good use of merge instructions to unify unnecessary
+            branches
+            and organize the version line diagram clearly.</h3></div>
+
+        <div id="tags" class="header" align="center"><h1>Tags</h1></div>
+        <br>
+
+               <div class="left3"><h2 align="center">TAGS</h2>
+        <h3>&emsp;Capture a point in history that is used for a marked version release (i.e. v1.0.1)<hr>
+                     </h3><h4>
+                    <b>git tag [tagname]</b><br>
+                   Creating a tag<hr>
+                    <b>git tag v1.4-lw</b><br>
+                    Lightweight Tags<hr>
+                    <b>git tag -a v1.4</b><br>
+                    Annotated tags are stored as full objects in the Git database<hr><hr></div>
+
+
+        <div class="right3"><h3>&emsp; &emsp; Git can tag versions at a point in time. This is often done when doing a
+            version release.
+            There are two types of tags used by Git: lightweight and annotated.<br><br>
+
+            &emsp; &emsp; Lightweight tags: Like a branch that doesn't change, it's actually a reference to a specific
+            commit object.
+
+            <br>
+            &emsp; &emsp; Annotated tags: It is actually a separate object stored in the repository, it has its own
+            checksum
+            information, contains the label's name, email address and date, and the label description, the label itself
+            also
+            allows the use of GNU Privacy Guard ( GPG) to sign or verify.
+            <br><br>
+
+            &emsp; &emsp;To sum up, the lightweight tag is a reference, and the annotation tag is a separate object.
+            Annotation tags are generally recommended to retain relevant details.
+        </h3></div>
+
+
+        <div id="cf" class="header" align="center"><h1>Clone and Fork</h1></div>
+        <br>
+        <div class="left3"><h2 align="center">SETUP & INIT</h2>
+        <h3>&emsp;Configuring user information, initializing and cloning repositories<hr>
+                     </h3><h4>
+                    <b>git init</b><br>
+                   initialize an existing directory as a Git repository<hr>
+                    <b>git clone [url]</b><br>
+                    retrieve an entire repository from a hosted location via URL
+                  <hr></div>
+
+
+        <div class="right3"><h3>&emsp; &emsp;The Clone command is to copy all the content of the project in the remote
+            repository to the
+            local, to create a local repository and working directory, while the Fork is to copy the content of the
+            remote
+            repository of other people's projects. <br><br>
+
+            &emsp; &emsp;If the developer sees an interesting project on GitHub, he can execute the Fork command to copy
+            the
+            remote repository of other projects to his own remote repository, and then execute the Clone command to copy
+            the
+            entire project of his own remote repository. , including versions, to the local repository. <br><br></h3>
+            <div class="goTop" align="right">
+                <a href="#" class="goTopBtn jq-goTop">
+                    <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+                </a>
+            </div>
+        </div>
+
+        <div id="pppr" class="header" align="center"><h1>Push, Pull, and Pull Request</h1></div>
+        <br>
+        <div class="left"><h2 align="center">SHARE & UPDATE</h2>
+        <h3>&emsp;Retrieving updates from another repository and updating local repos<hr>
+                     </h3><h4>
+                    <b>git remote add [alias] [url</b><br>
+                   add a git URL as an alias<hr>
+                    <b>git fetch [alias]</b><br>
+                    fetch down all the branches from that Git remote<hr>
+                    <b>git merge [alias]/[branch]</b><br>
+                   merge a remote branch into your current branch to bring it up to date<hr>
+                 <b>git push [alias] [branch]</b><br>
+                   Transmit local branch commits to the remote repository branch<hr>
+                 <b>git pull</b><br>
+                   fetch and merge any commits from the tracking remote branch<hr></div>
+
+
+
+        <div class="right">
+            <h3>&emsp; &emsp; Execute the push (Push) command, you can upload the relevant files of your
+                current local
+                repository to the remote repository, while the pull (Pull) command downloads the latest version of the
+                remote
+                repository to your local side. And merge the remote branch into the local branch. However, Pull does not
+                download the content of each version of the complete project like the Clone command.<br><br>
+
+                &emsp; &emsp;Developers can execute Pull to obtain the code on the remote repository authorized by
+                others,
+                or
+                push the code modified by themselves to the accessible third-party remote repository. Through the push
+                (Push)
+                and pull (Pull) two commands, developers can share the source code with each other. <br><br>
+
+                &emsp; &emsp;Pull Request, on the other hand, is more proactive in requiring third-party developers to
+                include
+                their own programs, and integrate the code on the local repository into the other side's repository. For
+                example, member A can request member B through a Pull Request to incorporate the code modified by member
+                A
+                into
+                member B's development project.
+                <div class="goTop" align="right">
+                    <a href="#" class="goTopBtn jq-goTop">
+                        <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+                    </a>
+                </div>
+            </h3>
+        </div>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        -->
+
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Bootstrap Example</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+
+
+        </body>
+        </html>
