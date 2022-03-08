@@ -56,7 +56,7 @@
 
             .icon-bar a {
                 float: left;
-                width: 16.5%;
+                width: 20%;
                 text-align: center;
                 padding: 15px 0;
                 transition: all 0.5s ease;
@@ -142,40 +142,40 @@
             }
 
             .left {
-                width: 390px;
-                height: 900px;
-            }
-
-            .right {
                 width: 690px;
                 height: 900px;
             }
 
+            .right {
+                width: 390px;
+                height: 900px;
+            }
+
             .left2 {
-                width: 400px;
+                width: 700px;
                 height: 1300px;
             }
 
             .right2 {
-                width: 700px;
+                width: 400px;
                 height: 1300px
             }
 
             .left3 {
-                width: 400px;
+                width: 700px;
                 height: 450px;
             }
 
             .right3 {
-                width: 700px;
+                width: 400px;
                 height: 450px
             }
 
-            .footer {
+            #footer {
                 border: 1px solid black;
                 height: 200px;
                 margin: 10px;
-                background: orange;
+                text-align: center;
             }
 
 
@@ -188,8 +188,7 @@
             <a  href="/git"><i class="fab fa-github"></i><h3>Git</h3></a>
             <a class="active" href="#"><i class="fab fa-docker"></i><h3>Docker</h3></a>
             <a href="/python"><i class="fab fa-python"></i><h3>Python</h3></a>
-            <a href="/cico"><i class="fas fa-sitemap" "></i><h3>CI/CO</h3></a>
-            <a href="/about"><i class="fas fa-user-circle"></i><h3>About</h3></a>
+            <a href="/cicd"><i class="fas fa-sitemap" "></i><h3>CI/CD</h3></a>
         </div>
 
         </body>
@@ -212,8 +211,19 @@
         <div class="wrap">
             <div id="intro" class="header" align="center"><h1> Intro </h1></div>
 
+            <div class="left2">
 
-            <div class="left2"><h2 align="center">Download and install Docker</h2>
+                <h3>
+                    &emsp;&emsp;The traditional virtual machine we use, it has some limited, such as it requires simulating the entire machine including hardware, each virtual machine needs to have its own operating system, and every virtual machine should choose the same operating system in the same project, otherwise it would not able to link together. Once the virtual machine is started, all the resources pre-allocated to it will be occupied.<br><br>
+                    &emsp;&emsp;However, the docker could run directly on the host kernel and does not need to start a full operating system, the startup speed is on the order of seconds, while virtual machines usually take minutes to start.<br><br>
+                    &emsp;&emsp;Docker utilizes system resources more efficiently because containers do not require the additional overhead of hardware virtualization and running a full operating system.<br><br>
+                    &emsp;&emsp;Docker's architecture can share a single kernel and shared application library, occupying very little memory. In the same hardware environment, the number of images run by Docker is much more than the number of virtual machines, and the utilization of the system is very high.<br><br>
+                    &emsp;&emsp;Developers can use Dockerfile to build images and perform integration tests, while operators can quickly deploy the image directly in the production environment, or even automate deployment.<br><br>
+                    &emsp;&emsp;Migrating applications is easier because Docker ensures consistency of the execution environment. Docker can run on many platforms, whether it is a physical machine, a virtual machine, a public cloud, a private cloud, or even a laptop, and its running results are consistent. Therefore, users can easily migrate an application running on one platform to another platform without worrying about the situation that the application cannot run normally due to changes in the running environment.<br><br>
+                </h3>
+
+            </div>
+             <div class="right2"><h2 align="center">Download and install Docker</h2>
                 <h3>
 
                     <hr>
@@ -228,18 +238,6 @@
                 </h3>
             </div>
 
-            <div class="right2">
-
-                <h3>
-                    &emsp;&emsp;The traditional virtual machine we use, it has some limited, such as it requires simulating the entire machine including hardware, each virtual machine needs to have its own operating system, and every virtual machine should choose the same operating system in the same project, otherwise it would not able to link together. Once the virtual machine is started, all the resources pre-allocated to it will be occupied.<br><br>
-                    &emsp;&emsp;However, the docker could run directly on the host kernel and does not need to start a full operating system, the startup speed is on the order of seconds, while virtual machines usually take minutes to start.<br><br>
-                    &emsp;&emsp;Docker utilizes system resources more efficiently because containers do not require the additional overhead of hardware virtualization and running a full operating system.<br><br>
-                    &emsp;&emsp;Docker's architecture can share a single kernel and shared application library, occupying very little memory. In the same hardware environment, the number of images run by Docker is much more than the number of virtual machines, and the utilization of the system is very high.<br><br>
-                    &emsp;&emsp;Developers can use Dockerfile to build images and perform integration tests, while operators can quickly deploy the image directly in the production environment, or even automate deployment.<br><br>
-                    &emsp;&emsp;Migrating applications is easier because Docker ensures consistency of the execution environment. Docker can run on many platforms, whether it is a physical machine, a virtual machine, a public cloud, a private cloud, or even a laptop, and its running results are consistent. Therefore, users can easily migrate an application running on one platform to another platform without worrying about the situation that the application cannot run normally due to changes in the running environment.<br><br>
-                </h3>
-
-            </div>
             <img src="../static/images/docker_vm.png" alt="Virtual Machine" class="center" width="1100" height="400">
             <img src="../static/images/docker_d.png" alt="Docker" class="center" width="1100" height="300">
         </div>
@@ -249,7 +247,16 @@
             <br>
 
             <img src="../static/images/docker_workflow.png" alt="Docker Workflow" class="center" width="1100" height="400">
-            <div class="left2"><h2 align="center">SETUP</h2>
+
+            <div class="left2"><h3>&emsp; &emsp; Image: A Docker image is a special file system. In addition to providing the programs, libraries, resources, configuration and other files required for the container to run, it also contains some configuration parameters prepared for the runtime (such as anonymous volumes, environment variables, users, etc.). The image does not contain any dynamic data, and its contents are not changed after construction.<p><br>
+
+
+                        &emsp; &emsp; Container: The relationship between Image and Container is like class and instance in object-oriented programming. Image is a static definition, and container is the entity of image runtime. Containers can be created, started, stopped, deleted, suspended, etc.</p>
+                    <p><br>
+
+                        &emsp; &emsp;Repository: Repository is a Git-like remote repository that centrally stores image files.</p>
+            </h3></div>
+            <div class="right2"><h2 align="center">SETUP</h2>
                 <h3>
                 &emsp;Configuring user information used across all local repositories<hr>
                      </h3><h4>
@@ -269,26 +276,26 @@
                     stop the container<hr>
                     <b>docker rm [the-container-id]</b><br>
                     Once the container has stopped, you can remove it<hr>
-               </h4>
+               <div><a href="#" align="right" class="goTopBtn jq-goTop">
+                    <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+               </a></h4></h4></div>
             </div>
-
-
-            <div class="right2"><h3>&emsp; &emsp; Image: A Docker image is a special file system. In addition to providing the programs, libraries, resources, configuration and other files required for the container to run, it also contains some configuration parameters prepared for the runtime (such as anonymous volumes, environment variables, users, etc.). The image does not contain any dynamic data, and its contents are not changed after construction.<p><br>
-
-
-                        &emsp; &emsp; Container: The relationship between Image and Container is like class and instance in object-oriented programming. Image is a static definition, and container is the entity of image runtime. Containers can be created, started, stopped, deleted, suspended, etc.</p>
-                    <p><br>
-
-                        &emsp; &emsp;Repository: Repository is a Git-like remote repository that centrally stores image files.</p>
-            </h3><a href="#" align="right" class="goTopBtn jq-goTop">
-                <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
-            </a></div>
         </div>
 
 
         <div id="udc" class="header" align="center"><h1>Useful Docker Command</h1></div>
         <br>
-        <div class="left3"><h2 align="center"></h2><h4>
+
+
+        <div class="left3"><h3>&emsp; &emsp;To start the docker, you could follow the steps to setup.
+            &emsp; &emsp;<br><br>
+            &emsp; &emsp; First: build the image {<b>docker build -t [image name] .</b>}
+            &emsp; &emsp;<br><br>
+             &emsp; &emsp;Second: create repository in dockerhub ( it is better to name the repo same to the image you build)
+            &emsp; &emsp; <br><br>
+            &emsp; &emsp;Third: run the docker command { <b>docker push [user_name]/[image_name]:tagname</b>}
+            &emsp; &emsp;</h3></div>
+        <div class="right3"><h2 align="center"></h2><h4>
                     <b>docker –version</b><br>
                     get the currently installed version of docker<hr>
                     <b>docker pull [image name]</b><br>
@@ -299,18 +306,6 @@
                     push an image to the docker hub repository<hr>
                     <b>docker build [path to docker file]</b><br>
                      build an image from a specified docker file<hr></div>
-
-
-
-
-        <div class="right3"><h3>&emsp; &emsp;To start the docker, you could follow the steps to setup.
-            &emsp; &emsp;<br><br>
-            &emsp; &emsp; First: build the image {<b>docker build -t [image name] .</b>}
-            &emsp; &emsp;<br><br>
-             &emsp; &emsp;Second: create repository in dockerhub ( it is better to name the repo same to the image you build)
-            &emsp; &emsp; <br><br>
-            &emsp; &emsp;Third: run the docker command { <b>docker push [user_name]/[image_name]:tagname</b>}
-            &emsp; &emsp;</h3></div>
 
         <div><img src="../static/images/docker_1.png" alt="Docker Create Repo" align="center" width="1100" height="300">
 
@@ -351,6 +346,10 @@
         </head>
         <body>
 
-
+<div> <!--footer-->
+        <footer id = "footer" class = "clearFix">
+            <a href = "https://github.com/ChiaLinz/is601-project1" target="_blank" style = "color: #cb6b21;">Chia-Lin Hsieh &#169;</a>
+        </footer>
+    </div>
         </body>
         </html>

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<title> CI / CD</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+
+</head>
+
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"/>
+            </svg>
+        </a>
+        <!DOCTYPE html>
+        <html>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Change the herf website to fix the docker, python icon not showing -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+              integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+              crossorigin="anonymous"
+        ">
+
+        <style type="text/css">
+
+        </style>
+
+
+        <style>
+
+            body {
+                margin: 0;
+            }
+
+
+            .icon-bar {
+                width: 100%;
+                background-color: #485F6E;
+                overflow: auto;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 20%;
+                text-align: center;
+                padding: 15px 0;
+                transition: all 0.5s ease;
+                color: white;
+                font-size: 60px;
+            }
+
+            .icon-bar a:hover {
+                background-color: #17719900;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+
+            body {
+                line-height: 1;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+
+            blockquote, q {
+                quotes: none;
+            }
+
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .clearfix {
+                clear: both;
+            }
+
+            .wrap {
+                width: 1100x;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .outline {
+                border: 5px solid black;
+                height: 100px;
+                margin: 10px;
+                background: whitesmoke;
+            }
+
+            .header, .footer {
+                border: 10px solid black;
+                width: 1090px;
+                height: 100px;
+                margin: 10px;
+                background: #e7b995;
+                font-size: 32px;
+                padding: 8px;
+                float: left;
+            }
+
+
+            .left, .right, .left2, .right2, .left3, .right3 {
+                float: left;
+                padding: 8px;
+                margin: 10px;
+                background: #97bac5;
+                font-size: 32px;
+            }
+
+            .left {
+                width: 690px;
+                height: 900px;
+            }
+
+            .right {
+                width: 390px;
+                height: 900px;
+            }
+
+            .left2 {
+                width: 700px;
+                height: 1300px;
+            }
+
+            .right2 {
+                width: 400px;
+                height: 1300px
+            }
+
+            .left3 {
+                width: 700px;
+                height: 450px;
+            }
+
+            .right3 {
+                width: 400px;
+                height: 450px
+            }
+
+            #footer {
+                text-align: center;
+            }
+
+
+        </style>
+        <body>
+
+
+        <div class="icon-bar">
+            <a href="/index"><i class="fa fa-home"></i><h3>Index</h3></a>
+            <a href="/git"><i class="fab fa-github"></i><h3>Git</h3></a>
+            <a href="/docker"><i class="fab fa-docker"></i><h3>Docker</h3></a>
+            <a href="/python"><i class="fab fa-python"></i><h3>Python</h3></a>
+            <a class="active" href="#"><i class="fas fa-sitemap" "></i><h3>CI/CD</h3></a>
+        </div>
+
+        </body>
+        </html>
+
+
+    </header>
+
+    <div style="float:middle" align="center"><h1> Continuous integration / Continuous Delivery </h1></div>
+    <br><br><br>
+
+    <div>
+        <div class="outline"><h2>
+            <a href="#intro" class="link-primary">Intro</a><br>
+            <a href="#tutorial" class="link-primary">Tutorial</a><br>
+        </h2></div>
+
+
+        <div class="wrap">
+            <div id="intro" class="header" align="center"><h1> Intro </h1></div>
+            <div class="left">
+                <h3>&emsp;&emsp;What is "continuous integration"?<br>
+ &emsp;&emsp;To ensure the quality of the program, there are some checks to be done before releasing the program. Hence, the existing program would not crush or have too many bug to fix when a new engineer join the project.<br>
+
+&emsp;&emsp;The most basic thing is to confirm whether the code has syntax errors. Sometimes due to the urgency of time or careless negligence, the code with syntax errors may be released to the official environment, except for general syntax checks, the ideal program development process. In addition to implementing the required functions, engineers also need to write test code to test whether the program operates correctly. Before releasing the program, the test code should be executed to check whether the function code works as expected. <br>
+
+&emsp;&emsp;Therefore, before we release the program, any inspection steps that need to be done, these steps are checked through the tool before going live, which is called "continuous integration".<br>
+
+&emsp;&emsp;In short, CI/CD means that after the engineer has completed the development of the program, the developed code is subjected to a series of pre-launch inspections, and the code that passes the inspection can be directly released online. This process is the so-called CI/CD.
+
+
+                </h3>
+            </div>
+
+            <div class="right"><h2 align="center">Why do we need "Continuous integration"?</h2>
+                <h3>&emsp;&emsp;If the team today is small and the services provided are few, then after each development, manual publishing may not be a burden, but when the organization becomes larger, so does the service. More, in addition to regular updates, there may be online problems that need to be quickly launched after being dealt with. Under such a time-space background, manual publishing will be a bottleneck.<br>
+
+                    &emsp;In order to solve the trouble caused by manual release, the concept of "Continuous integration" was born accordingly.
+
+            </div>
+        </div>
+
+        <div class="wrap">
+            <div id="tutorial" class="header" align="center"><h1>Tutorial</h1></div>
+            <br>
+            <div class="left">
+                <h3>
+                     <b>First step:</b><br>
+                    &emsp;&emsp;Go to <a href="https://github.com/kaw393939/docker_flask">Professor Keith Williams' github</a><br> clone the project, which could help to build the CI/CD.
+                     <b>Second step:</b><br>
+                    &emsp;&emsp;Go to Heroku sign up and create your own app, getting the API key.<hr>
+                    <b>Third step:</b><br>
+                    &emsp;&emsp;Go to your github project, click settings, Security->Actions, and create three new repository secret. Including, "HEROKU_API_KEY" with  the API key generate from the Heroku, "DOCKER_USERNAME" with your docker username/mail, and DOCKER_PASSWORD with your docker password.<hr>
+                   <b>Forth step:</b><br>
+                    &emsp;&emsp;Go to your Heroku app dashboard -> settings and link the app to your github project.<hr>
+                     <b>Fifth step:</b><br>
+                    &emsp;&emsp;Follow the instructions in the github to add the info to the files.<br>
+
+                     </h3>
+            </div>
+
+
+            <div class="right"><h3><h2 align="center">Website Link</h2>
+                <a href="https://dashboard.heroku.com/apps">Heroku</a><br>
+                <a href="https://github.com/">GitHub</a><br>
+                <a href="https://github.com/kaw393939/docker_flask">Professor Keith Williams' github</a>
+            </div>
+
+
+
+                <div class="goTop" align="right">
+                    <a href="#" class="goTopBtn jq-goTop">
+                        <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+                    </a>
+                </div>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        -->
+
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Bootstrap Example</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+
+<div> <!--footer-->
+        <footer id = "footer" class = "clearFix">
+            <a href = "https://github.com/ChiaLinz/is601-project1" target="_blank" style = "color: #cb6b21;">Chia-Lin Hsieh &#169;</a>
+        </footer>
+    </div>
+        </body>
+        </html>
