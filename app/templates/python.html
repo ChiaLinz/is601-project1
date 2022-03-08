@@ -116,7 +116,7 @@
 
             .outline {
                 border: 5px solid black;
-                height: 250px;
+                height: 100px;
                 margin: 10px;
                 background: whitesmoke;
             }
@@ -133,7 +133,7 @@
             }
 
 
-            .left, .right {
+            .left, .right, .left2, .right2{
                 float: left;
                 padding: 8px;
                 margin: 10px;
@@ -149,6 +149,16 @@
             .right {
                 width: 390px;
                 height: 900px;
+            }
+
+            .left2 {
+                width: 690px;
+                height: 500px;
+            }
+
+            .right2 {
+                width: 390px;
+                height: 500px;
             }
 
             #footer {
@@ -212,18 +222,17 @@ CMD: There can only be one CMD instruction in a Dockerfile, and CMD is the instr
             <div id="t2" class="header" align="center"><h1>Tutorial 2</h1></div>
             <img src="../static/images/flask_3.png" alt="test" class="center" width="1100" height="600"><br><hr>
 
-             <div class="left"><h2 align="left">
+             <div class="left2"><h2 align="left">
+                 &emsp; &emsp;For the test page, we define "test request menu link" to test the content in the index, and each of the page would also have "test request page" to test their contend.
+                 <br><br>&emsp; &emsp;The idea of the test here is simple, only testing weather a word or a sentence after "assert b" is existing in the page.
              </h2></div>
 
-            <div class="right"><h2 align="left">
+            <div class="right2"><h2 align="left">
 <h3>&emsp;.pylintrc is the config for pylint, .coveragerc is the config for coverage and setup.py is a config file for pytest<hr>
                      </h3><h4>
                     <b>pytest --pylint --cov</b><br>
                    Run tests, Lint, and Coverage report <hr>
-                    <b>git tag v1.4-lw</b><br>
-                    Lightweight Tags<hr>
-                    <b>git tag -a v1.4</b><br>
-            </h2></div></div></div>/
+            </h2></div></div>
 
 
 <div class="goTop" align="right">
