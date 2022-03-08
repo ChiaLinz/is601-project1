@@ -5,6 +5,8 @@
 [![Heroku Awake](https://github.com/ChiaLinz/is601-project1/actions/workflows/heroku_awake_prod.yml/badge.svg)](https://github.com/ChiaLinz/is601-project1/actions/workflows/heroku_awake_prod.yml)
 <br><br>
 [![Production Workflow](https://github.com/ChiaLinz/is601-project1/actions/workflows/prod.yml/badge.svg)](https://github.com/ChiaLinz/is601-project1/actions/workflows/prod.yml)
+<br><br> 
+[![Development Workflow](https://github.com/ChiaLinz/is601-project1/actions/workflows/dev.yml/badge.svg)](https://github.com/ChiaLinz/is601-project1/actions/workflows/dev.yml)
 
 <hr>
 
