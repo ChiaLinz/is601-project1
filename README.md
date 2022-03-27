@@ -1,4 +1,4 @@
-# is601-project1
+# IS601-project1
 
 [Project_Requirement](/Porject_Requirement.md) <hr>
 
