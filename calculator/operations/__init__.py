@@ -7,26 +7,26 @@ class Addition:
     # this defines a static method that you can use without instantiating the calculator class
     # If you can go to the store and buy it, it is an object.  If you can't buy it then its a static method
     @staticmethod
-    def add(self, value_1, value_2):
+    def add(value_1, value_2):
         return value_1 + value_2
 
 
 class Subtraction:
 
     @staticmethod
-    def subtract(self, value_1, value_2):
+    def subtract(value_1, value_2):
         return value_1 - value_2
 
 
 class Multiplication:
 
     @staticmethod
-    def multiply(self, value_1, value_2):
+    def multiply(value_1, value_2):
         return value_1 * value_2
 
 
 class Division:
 
     @staticmethod
-    def divide(self, value_1, value_2):
+    def divide(value_1, value_2):
         return value_1 / value_2
