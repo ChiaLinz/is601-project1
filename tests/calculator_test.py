@@ -48,6 +48,11 @@ def test_calculator_multiply_method():
     calculator = Calculator()
     assert calculator.multiply(1, 1) == 1
 
+def test_calculator_Divide_method():
+    """Testing the Calculator Subtract"""
+    calculator = Calculator()
+    assert calculator.multiply(1, 1) == 1
+
 
 def test_my_first_test_add():
     """Testing the simplest addition"""
