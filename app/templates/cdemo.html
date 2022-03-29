@@ -3,8 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculator demonstrate OOP + SOLID Factory Pattern</title>
-</head>
-<body>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</body>
-</html>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+
+</head>
+
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"/>
+            </svg>
+        </a>
+        <!DOCTYPE html>
+        <html>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Change the herf website to fix the docker, python icon not showing -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+              integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+              crossorigin="anonymous"
+        ">
+
+        <style type="text/css">
+
+        </style>
+
+
+        <style>
+
+            body {
+                margin: 0;
+            }
+
+
+            .icon-bar {
+                width: 100%;
+                background-color: #485F6E;
+                overflow: auto;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 20%;
+                text-align: center;
+                padding: 15px 0;
+                transition: all 0.5s ease;
+                color: white;
+                font-size: 60px;
+            }
+
+            .icon-bar a:hover {
+                background-color: #17719900;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+
+            body {
+                line-height: 1;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+
+            blockquote, q {
+                quotes: none;
+            }
+
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .clearfix {
+                clear: both;
+            }
+
+            .wrap {
+                width: 1100x;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .outline {
+                border: 5px solid black;
+                height: 170px;
+                margin: 10px;
+                background: whitesmoke;
+            }
+
+            .header, .footer {
+                border: 10px solid black;
+                width: 1090px;
+                height: 100px;
+                margin: 10px;
+                background: #e7b995;
+                font-size: 32px;
+                padding: 8px;
+                float: left;
+            }
+
+
+            .left, .right, .left2, .right2, .left3, .right3 {
+                float: left;
+                padding: 8px;
+                margin: 10px;
+                background: #97bac5;
+                font-size: 32px;
+            }
+
+            .left {
+                width: 690px;
+                height: 700px;
+            }
+
+            .right {
+                width: 390px;
+                height: 700px;
+            }
+
+            .left2 {
+                width: 700px;
+                height: 3750px;
+            }
+
+            .right2 {
+                width: 400px;
+                height: 3750px
+            }
+
+            .left3 {
+                width: 700px;
+                height: 2200px;
+            }
+
+            .right3 {
+                width: 400px;
+                height: 2200px
+            }
+
+            #footer {
+                text-align: center;
+            }
+
+
+        </style>
+        <body>
+
+
+        <div class="icon-bar">
+            <a href="/index"><i class="fa fa-home"></i><h3>Index</h3></a>
+            <a href="/git"><i class="fab fa-github"></i><h3>Git</h3></a>
+            <a href="/docker"><i class="fab fa-docker"></i><h3>Docker</h3></a>
+            <a href="/python"><i class="fab fa-python"></i><h3>Python</h3></a>
+            <a href="/cicd"><i class="fas fa-sitemap" "></i><h3>CI/CD</h3></a>
+            <a href="/oop"><i class="far fa-circle"></i><h3>OOP & Design Pattern</h3></a>
+            <a href="/aaa"><i class="fa fa-font"></i><h3>AAA Testing</h3></a>
+            <a class="active" href="#"><i class="fas fa-video"></i><h3> Calculator Demo</h3></a>
+        </div>
+
+        </body>
+        </html>
+
+
+    </header>
+
+    <div style="float:middle" align="center"><h1> Arrange-Act-Assert Testing</h1></div>
+    <br><br><br>
+
+    <div>
+        <div class="outline"><h2>
+            <a href="#oop" class="link-primary">Calculator demonstrate of OOP</a><br>
+            <a href="#solid" class="link-primary">Calculator demonstrate of SOLID and Factory Pattern</a><br>
+            <a href="#exp" class="link-primary">Why testing is important?</a><br>
+        </h2></div>
+
+
+        <div class="wrap">
+            <div id="oop" class="header" align="center"><h1> Calculator demonstrate of OOP </h1></div>
+                        <div class="left">
+                <h1>Arrange</h1>
+                <h3>&emsp; &emsp; inputs and targets. Arrange steps should set up the test case. Does the test require any objects or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test.</h3><hr>
+                <h1>Act</h1>
+                <h3>&emsp; &emsp;  on the target behavior. Act steps should cover the main thing to be tested. This could be calling a function or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.</h3><hr>
+                <h1>Assert</h1>
+                <h3>&emsp; &emsp;expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness or badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other times, they may require checking multiple facets of a system. Assertions will ultimately determine if the test passes or fails.</h3><hr>
+                        </div></div>
+            <div class="right"><h2 align="center">Reference</h2>
+                <h3>
+                    <hr>
+                    <a href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/">Reference of AAA</a><br><hr>
+                </h3>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <div id="solid" class="header" align="center"><h1>Calculator demonstrate of SOLID and Factory Pattern</h1></div>
+            <br>
+
+
+            <div class="left2"><h1>Step 1 :Create Calculator (Operation)</h1>
+                 <img src="../static/images/aaa1.PNG" alt="a1" class="align-left" width="700" height="600"><br>
+                <img src="../static/images/aaa2.PNG" alt="a1" class="align-left" width="700" height="600"><hr>
+                <h1>Step 2 :Create the testing based on the Calculator's function</h1>
+                <img src="../static/images/aaa3.PNG" alt="a1" class="align-left" width="700" height="600"><hr>
+                <h1>Step 3 :Run the pytest</h1>
+                <img src="../static/images/aaa4.PNG" alt="a1" class="align-left" width="700" height="900"><hr>
+                <h1>Step 4 :Check the result of pytest</h1>
+                <img src="../static/images/aaa5.PNG" alt="a1" class="align-left" width="700" height="600"><hr>
+
+
+            </div>
+             <div class="right2">
+
+
+                 <h2 align="center">Idea</h2><hr>
+                <h3>The test program is written as a typical AAA pattern:<br><br>
+                    Arrange - Arrange test cases. Parameter initialization, input parameters, and expected results.<br><br>
+                    Act - Execute the test. Call the object under test and pass in the test case parameters.<br><br>
+                    Assert - Validate the result. Compare whether the execution result matches the expected result.<br><hr>
+
+                &emsp;&emsp;I first create the calculator as the main function, and check its functions including, add, subtract, multiply, and divide. Hence, I write the code for input values and see if the function would generate our expect output.<br><br>
+                    &emsp;&emsp;Then we could use the pytest to check if the output is correct by run the pytest or click the icon as image shows.<hr>
+
+               <div class="goTop" align="right"></h3>
+                <a href="#" class="goTopBtn jq-goTop">
+                    <i class="fas fa-arrow-alt-circle-up fa-3x"></i></a></div>
+            </div>
+
+
+
+
+        <div id="exp" class="header" align="center"><h1>Why testing is important?</h1></div>
+        <br>
+
+
+
+
+
+    <div class="left3" align="left"><h2>There are three main reason for why should we testing the code</h2><hr><h3>
+        <b>Quick check</b><br><br>
+        &emsp; &emsp;Imagine you modify the code in a huge, horrible legacy code base that sticks like hell. How confident can you be that you will not break other functions after the modification? My personal experience is, very low.<br><br>
+        &emsp; &emsp;For example, I encountered a case before. A large part of the huge system was related to sending messages, but the previous developers were not modularized, the logic was scattered everywhere, and there were related api calls everywhere. In order to make the architecture move towards a clearer path, a colleague started to modify the underlying code related to the message. But he didn't complete all the calls written by others, which broke the functionality after going online. In addition, there is no document provided after the modification. Others have to go back and look at the part they have changed if they want to modify it.<br><br>
+        &emsp; &emsp;Assuming that a system has written tests today, as long as you modify a small place, run the test immediately, and the computer can immediately diagnose whether the modification will destroy the existing functions, which greatly saves the subsequent debugging time!<br><br>
+        &emsp; &emsp;You might say that if you want to write tests, it will increase the time of upfront development. That's right! This is inevitable, but I think it can be seen as a time investment, as well as the concept of buying insurance. Because in the follow-up development, testing can definitely help you save the time cost that exceeds the investment! While it's tedious to write, it's a responsible and safe development habit.<br><br>
+        &emsp; &emsp;Looking back at the case mentioned at the beginning, you may ask, what should I do if the system is not tested now? In fact, this is another kind of knowledge, which will be discussed later. Here is a brief talk about the strategy, that is, there is no way, but to make changes gradually. And after each modification, be sure to supplement the test of the modified area, so that the code can become more and more healthy.<br><hr>
+
+        <b>Architecture optimization</b><br><br>
+        &emsp; &emsp;When designing a program, it must be unavoidable to call external apis, read and write db and other end-to-end operations. If we can't remove external dependencies during testing, it will cause big problems. The principle of the test is like a mathematical formula. We directly give four of the five inputs, and adjust the remaining one to see if the result meets the requirements. If the process needs to call the api to the outside, and the final test fails, is there a problem with the program we wrote, or is the problem with the external api? A lot of time will be wasted in the judgment, and the principle of our test will be lost.<br><br>
+        &emsp; &emsp;If there is a good architectural plan during development, external api calls are packaged, individually modularized and loosely coupled, so that external api-related modules can be replaced with fake ones during testing, focusing on testing We write program logic, so that we can increase the efficiency of testing.<br><br>
+        &emsp; &emsp;Since we have achieved loose coupling in order to make the program testable and modularized program blocks, if we want to modify the design in the future, we can enjoy the benefits of a highly flexible foundation, which indirectly affects our program structure and achieves the goal of optimization. <br><br>
+
+        <b>Test code is same as file</b><br><br>
+        &emsp; &emsp;When testing, we will call the methods or functions we write in various ways, which is actually a calling paradigm, telling future developers how to use these methods, or how the methods will respond given what parameters are given. Sometimes it may not feel good to look at the api file. From the perspective of the test code, it is like an example, but it can quickly get started.<br><br>
+
+
+</h3></div>
+ <div class="right3"><h2 align="center">Reference</h2>
+     <a href="https://www.educative.io/edpresso/5-reasons-why-testing-code-is-great">Reference of 5 reasons why testing code is great</a><br><hr>
+
+                     </h3><h4>
+
+ <h4><div class="goTop" align="right">
+                <a href="#" class="goTopBtn jq-goTop">
+                    <i class="fas fa-arrow-alt-circle-up fa-3x"></i></a></div></h4>
+ </div></div>
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        -->
+
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Bootstrap Example</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </head>
+        <body>
+<div> <!--footer-->
+        <footer id = "footer" class = "clearFix">
+            <a href = "https://github.com/ChiaLinz/is601-project1" target="_blank" style = "color: #cb6b21;">Chia-Lin Hsieh &#169;</a>
+        </footer>
+    </div>
+
+        </body>
+        </html>
