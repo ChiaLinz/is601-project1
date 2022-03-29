@@ -8,6 +8,9 @@ def test_request_main_menu_links(client):
     assert b'Git' in response.data
     assert b'CI/CD' in response.data
     assert b'Python' in response.data
+    assert b'OOP' in response.data
+    assert b'AAA' in response.data
+    assert b'OOP' in response.data
 
 def test_request_index(client):
     """This makes the index page"""
@@ -43,3 +46,20 @@ def test_request_page_not_found(client):
     """This makes the index page"""
     response = client.get("/page5")
     assert response.status_code == 404
+
+def test_request_oop(client):
+    """This makes the index page"""
+    response = client.get("/oop")
+    assert response.status_code == 200
+    assert b"OOP" in response.data
+
+def test_request_aaa(client):
+    """This makes the index page"""
+    response = client.get("/aaa")
+    assert response.status_code == 200
+    assert b"AAA" in response.data
+def test_request_cdemo(client):
+    """This makes the index page"""
+    response = client.get("/cdemo")
+    assert response.status_code == 200
+    assert b"OOP" in response.data
